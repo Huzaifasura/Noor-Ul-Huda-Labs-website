@@ -104,40 +104,56 @@
     </script>
     
     <!-- Fonts - Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
-    <!-- Critical CSS inlined -->
-    <style>
-        *,::after,::before{box-sizing:border-box;border:0 solid #e5e7eb}
-        html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,sans-serif}
-        body{margin:0;line-height:inherit;background-color:#f7faf9;font-family:Manrope,ui-sans-serif,system-ui,sans-serif;color:#181c1c;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-        img,video{max-width:100%;height:auto;display:block}
-        a{color:inherit;text-decoration:none}
-        .fixed{position:fixed}.relative{position:relative}.top-0{top:0}.w-full{width:100%}.z-50{z-index:50}
-        .flex{display:flex}.hidden{display:none}.items-center{align-items:center}.justify-between{justify-content:space-between}
-        .gap-2{gap:0.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}
-        .text-2xl{font-size:1.5rem;line-height:2rem}.font-extrabold{font-weight:800}.text-primary{color:#006b54}
-        .bg-white{background-color:#fff}.rounded-full{border-radius:9999px}.max-w-7xl{max-width:80rem}.mx-auto{margin-left:auto;margin-right:auto}
-        @media(min-width:768px){.md\:flex{display:flex}}
-    </style>
-    
-    <!-- Google Fonts - loaded async -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/></noscript>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/></noscript>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
     <!-- Custom CSS -->
     <link href="styles.css" rel="stylesheet"/>
     
-    <!-- Tailwind - deferred -->
     <script>
-        tailwind = {config:{darkMode:"class",theme:{extend:{colors:{"primary":"#006b54","primary-light":"#1FAB89","primary-container":"#1fab89","primary-fixed":"#7ef8d2","gold":"#D4AF37","surface":"#f7faf9","on-surface":"#181c1c","on-surface-variant":"#3d4a44","on-primary":"#ffffff","on-primary-fixed":"#002118","surface-container":"#ebeeed","surface-container-low":"#f1f4f3","surface-container-lowest":"#ffffff","surface-container-highest":"#e0e3e2","secondary-container":"#c6e4f4","on-secondary-container":"#4a6774","outline":"#6d7a74","outline-variant":"#bccac3"},fontFamily:{"headline":["Plus Jakarta Sans"],"body":["Manrope"]},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"}}}}}
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#006b54",
+                        "primary-light": "#1FAB89",
+                        "primary-container": "#1fab89",
+                        "primary-fixed": "#7ef8d2",
+                        "gold": "#D4AF37",
+                        "surface": "#f7faf9",
+                        "on-surface": "#181c1c",
+                        "on-surface-variant": "#3d4a44",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#002118",
+                        "surface-container": "#ebeeed",
+                        "surface-container-low": "#f1f4f3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e2",
+                        "secondary-container": "#c6e4f4",
+                        "on-secondary-container": "#4a6774",
+                        "outline": "#6d7a74",
+                        "outline-variant": "#bccac3",
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
     </script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" defer></script>
     
     <style>
         .material-symbols-outlined {
