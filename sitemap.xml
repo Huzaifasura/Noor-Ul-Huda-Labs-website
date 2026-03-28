@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://hudalabs.app/</loc>
+        <lastmod>2026-03-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://hudalabs.app/Untitled%20(512%20x%20512%20px)%20(6).png</image:loc>
+            <image:title>Noor Ul Huda Islamic Learning App Logo</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://hudalabs.app/download.html</loc>
+        <lastmod>2026-03-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://hudalabs.app/contact.html</loc>
+        <lastmod>2026-03-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://hudalabs.app/privacy.html</loc>
+        <lastmod>2026-03-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://hudalabs.app/terms.html</loc>
+        <lastmod>2026-03-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>

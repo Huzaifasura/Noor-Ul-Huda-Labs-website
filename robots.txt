@@ -1,0 +1,27 @@
+# Robots.txt for HudaLabs - Noor Ul Huda Kids App
+# https://hudalabs.app/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://hudalabs.app/sitemap.xml
+
+# Crawl-delay for specific bots (optional)
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

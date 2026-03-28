@@ -1,34 +1,64 @@
 // HudaLabs - Premium Islamic Learning Reimagined
-// Main JavaScript File
+// Main JavaScript File - SEO & Performance Optimized 2026
 
-// Smooth appearance on scroll
-const observerOptions = { threshold: 0.1 };
+// Native Lazy Loading Fallback & Enhancement
+(function() {
+    'use strict';
+    
+    // Lazy load images without native support
+    if ('loading' in HTMLImageElement.prototype) {
+        // Native lazy loading is supported
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+            if (img.dataset.src) {
+                img.src = img.dataset.src;
+            }
+        });
+    } else {
+        // Fallback for browsers without native lazy loading
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+        script.async = true;
+        document.body.appendChild(script);
+    }
+})();
+
+// Smooth appearance on scroll with performance optimization
+const observerOptions = { 
+    threshold: 0.1,
+    rootMargin: '50px' // Start loading slightly before element enters viewport
+};
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('opacity-100', 'translate-y-0');
             entry.target.classList.remove('opacity-0', 'translate-y-10');
+            // Stop observing after animation completes (performance boost)
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Apply animation to all sections
-document.querySelectorAll('section').forEach(section => {
-    section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-    observer.observe(section);
+// Apply animation to all sections with reduced DOM queries
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+        observer.observe(section);
+    });
 });
 
-// 3D Carousel Logic
+// 3D Carousel Logic - SEO Optimized with descriptive alt text
 const carouselImages = [
-    { id: 1, src: '1.png', alt: 'App Home Screen' },
-    { id: 2, src: '2.png', alt: 'Journey Through Prophet Stories' },
-    { id: 3, src: '3.png', alt: 'Build a Habit of Daily Salah' },
-    { id: 4, src: '4.png', alt: 'Learn Namaz Step-by-Step' },
-    { id: 5, src: '5.png', alt: 'Learn Essential Daily Duas' },
-    { id: 6, src: '6.png', alt: 'Learn Arabic Letters' },
-    { id: 7, src: '7.png', alt: 'Word-by-Word Quran Learning' },
-    { id: 8, src: '8.png', alt: 'Test Your Memory' }
+    { id: 1, src: '1.png', alt: 'Noor Ul Huda Islamic App Home Screen - Interactive Islamic Learning Interface' },
+    { id: 2, src: '2.png', alt: 'Journey Through Prophet Stories - Islamic Education for Kids' },
+    { id: 3, src: '3.png', alt: 'Build Daily Salah Prayer Habit - Muslim Kids Prayer Tracker' },
+    { id: 4, src: '4.png', alt: 'Learn Namaz Step-by-Step - Complete Islamic Prayer Guide' },
+    { id: 5, src: '5.png', alt: 'Learn Essential Daily Duas - Islamic Supplications for Children' },
+    { id: 6, src: '6.png', alt: 'Learn Arabic Letters and Alphabet - Quran Reading Basics' },
+    { id: 7, src: '7.png', alt: 'Word-by-Word Quran Learning - Interactive Quran Translation' },
+    { id: 8, src: '8.png', alt: 'Islamic Knowledge Quiz - Test Your Memory and Understanding' }
 ];
 
 let carouselActiveIndex = 3;
@@ -42,14 +72,17 @@ function initCarousel() {
 
     if (!container) return;
 
-    // Generate Cards
+    // Generate Cards with lazy loading and SEO optimization
     carouselImages.forEach((img, index) => {
         const card = document.createElement('div');
         card.className = 'carousel-card';
         card.dataset.index = index;
         
+        // Lazy load images beyond the first 3 for performance
+        const loadingAttr = index < 3 ? 'eager' : 'lazy';
+        
         card.innerHTML = `
-            <img src="${img.src}" alt="${img.alt}" draggable="false">
+            <img src="${img.src}" alt="${img.alt}" draggable="false" loading="${loadingAttr}" width="300" height="600">
             <div class="carousel-card-border"></div>
         `;
         
@@ -70,20 +103,25 @@ function initCarousel() {
         indicators.appendChild(dot);
     });
 
-    // Navigation buttons
+    // Navigation buttons with accessibility
     prevBtn.addEventListener('click', () => {
         if (carouselActiveIndex > 0) {
             carouselActiveIndex--;
             updateCarousel();
+            // Announce to screen readers
+            announceCarouselChange();
         }
     });
+    prevBtn.setAttribute('aria-label', 'Previous image in Islamic app features carousel');
 
     nextBtn.addEventListener('click', () => {
         if (carouselActiveIndex < carouselImages.length - 1) {
             carouselActiveIndex++;
             updateCarousel();
+            announceCarouselChange();
         }
     });
+    nextBtn.setAttribute('aria-label', 'Next image in Islamic app features carousel');
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
@@ -178,17 +216,41 @@ function updateCarousel() {
     nextBtn.disabled = carouselActiveIndex === carouselImages.length - 1;
 }
 
-// Initialize carousel when DOM is ready
-document.addEventListener('DOMContentLoaded', initCarousel);
+// Announce carousel changes for screen readers (accessibility)
+function announceCarouselChange() {
+    const currentImage = carouselImages[carouselActiveIndex];
+    const announcement = `Showing ${currentImage.alt}, image ${carouselActiveIndex + 1} of ${carouselImages.length}`;
+    
+    // Create or update ARIA live region
+    let liveRegion = document.getElementById('carousel-live-region');
+    if (!liveRegion) {
+        liveRegion = document.createElement('div');
+        liveRegion.id = 'carousel-live-region';
+        liveRegion.setAttribute('aria-live', 'polite');
+        liveRegion.setAttribute('aria-atomic', 'true');
+        liveRegion.className = 'sr-only'; // Screen reader only
+        document.body.appendChild(liveRegion);
+    }
+    liveRegion.textContent = announcement;
+}
+
+// Initialize carousel when DOM is ready with async loading
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+} else {
+    // DOM already loaded
+    initCarousel();
+}
 
 // ============================================
-// Custom Cursor
+// Custom Cursor - Performance Optimized
 // ============================================
 (function() {
-    // Only enable on desktop devices
+    // Only enable on desktop devices (performance optimization)
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     const isSmallScreen = window.innerWidth < 768;
     
+    // Skip custom cursor on mobile for better performance
     if (isTouchDevice || isSmallScreen) return;
     
     // Create cursor elements
@@ -211,17 +273,24 @@ document.addEventListener('DOMContentLoaded', initCarousel);
     let ringX = 0, ringY = 0;
     let glowX = 0, glowY = 0;
     
-    // Track mouse position
+    // Track mouse position with throttling for performance
+    let rafId;
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         
-        // Dot follows instantly
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top = mouseY + 'px';
+        // Use requestAnimationFrame for smooth performance
+        if (!rafId) {
+            rafId = requestAnimationFrame(() => {
+                // Dot follows instantly
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+                rafId = null;
+            });
+        }
         
-        // Create occasional particle trail
-        if (Math.random() > 0.92) {
+        // Create occasional particle trail (reduced frequency for performance)
+        if (Math.random() > 0.95) {
             createParticle(mouseX, mouseY);
         }
     });
@@ -313,24 +382,53 @@ document.addEventListener('DOMContentLoaded', initCarousel);
         
         document.body.appendChild(particle);
         
-        // Remove particle after animation
+        // Remove particle after animation with cleanup
         setTimeout(() => {
-            particle.remove();
+            if (particle && particle.parentNode) {
+                particle.remove();
+            }
         }, 800);
     }
     
-    // Handle window resize
+    // Handle window resize with debouncing for performance
+    let resizeTimer;
     window.addEventListener('resize', () => {
-        if (window.innerWidth < 768) {
-            document.body.classList.remove('custom-cursor-enabled');
-            cursorDot.style.display = 'none';
-            cursorRing.style.display = 'none';
-            cursorGlow.style.display = 'none';
-        } else {
-            document.body.classList.add('custom-cursor-enabled');
-            cursorDot.style.display = 'block';
-            cursorRing.style.display = 'block';
-            cursorGlow.style.display = 'block';
-        }
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth < 768) {
+                document.body.classList.remove('custom-cursor-enabled');
+                cursorDot.style.display = 'none';
+                cursorRing.style.display = 'none';
+                cursorGlow.style.display = 'none';
+            } else {
+                document.body.classList.add('custom-cursor-enabled');
+                cursorDot.style.display = 'block';
+                cursorRing.style.display = 'block';
+                cursorGlow.style.display = 'block';
+            }
+        }, 150); // Debounce resize events
     });
+})();
+
+// Performance optimization: Preload critical images
+(function() {
+    'use strict';
+    
+    // Preload hero images for better Core Web Vitals
+    const criticalImages = [
+        'Untitled design/10.png', // Logo
+        'Untitled (512 x 512 px) (6).png' // Hero image
+    ];
+    
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+        });
+    }
 })();
