@@ -9,6 +9,12 @@
     <meta name="robots" content="index, follow"/>
     <link rel="canonical" href="https://hudalabs.app/terms.html"/>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="Untitled design/10.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="Untitled design/10.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="Untitled design/10.png"/>
+    <link rel="shortcut icon" href="Untitled design/10.png"/>
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Terms & Conditions | Noor Ul Huda Islamic App | HudaLabs"/>
     <meta property="og:description" content="Read the terms and conditions for using Noor Ul Huda Islamic learning app. Legal agreement for our free educational platform for Muslim kids."/>
@@ -148,10 +154,10 @@
     
     <!-- TopNavBar -->
     <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm" aria-label="Primary Navigation">
-        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center px-4 md:px-6 py-3 md:py-4 max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-2" aria-label="HudaLabs Home">
-                <img src="Untitled design/10.png" alt="HudaLabs Logo - Islamic Education for Kids" class="w-10 h-10 object-contain" loading="lazy">
-                <span class="text-2xl font-extrabold text-primary tracking-tighter font-headline">HudaLabs</span>
+                <img src="Untitled design/10.png" alt="HudaLabs Logo - Islamic Education for Kids" class="w-8 h-8 md:w-10 md:h-10 object-contain" loading="lazy">
+                <span class="text-xl md:text-2xl font-extrabold text-primary tracking-tighter font-headline">HudaLabs</span>
             </a>
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8">
@@ -160,9 +166,29 @@
                 <a class="font-headline font-semibold text-sm tracking-tight text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
                 <a class="font-headline font-semibold text-sm tracking-tight text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
             </div>
-            <a href="index.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all duration-300 active:scale-95">
-                Download Now
-            </a>
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="hidden sm:inline-block bg-primary text-on-primary px-5 py-2 md:px-6 md:py-2.5 rounded-full font-semibold text-xs md:text-sm hover:opacity-90 transition-all duration-300 active:scale-95">
+                    Download Now
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-primary/10 transition-colors" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-lg">
+            <div class="flex flex-col px-4 py-4 space-y-1">
+                <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="download.html">Download</a>
+                <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="privacy.html">Privacy Policy</a>
+                <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="contact.html">Contact</a>
+                <div class="pt-2">
+                    <a href="index.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm">Download Now</a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -173,7 +199,7 @@
                 <span class="material-symbols-outlined text-[18px]" aria-hidden="true">gavel</span>
                 <span class="text-xs font-bold tracking-widest uppercase font-headline">Legal Terms</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold font-headline tracking-tight text-on-surface mb-6">Terms & Conditions - Noor Ul Huda Kids</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-headline tracking-tight text-on-surface mb-4 md:mb-6">Terms & Conditions - Noor Ul Huda Kids</h1>
             <p class="text-on-surface-variant max-w-xl mx-auto leading-relaxed">
                 Welcome to Noor Ul Huda Kids. By downloading or using our app, you agree to these Terms & Conditions. Please read them carefully.
             </p>

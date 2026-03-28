@@ -1,6 +1,50 @@
 // HudaLabs - Premium Islamic Learning Reimagined
 // Main JavaScript File - SEO & Performance Optimized 2026
 
+// ============================================
+// Mobile Menu Toggle
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isOpen) {
+                // Close menu
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.querySelector('path').setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                // Open menu
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                mobileMenuBtn.querySelector('path').setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.querySelector('path').setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.querySelector('path').setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+        });
+    }
+});
+
 // Native Lazy Loading Fallback & Enhancement
 (function() {
     'use strict';

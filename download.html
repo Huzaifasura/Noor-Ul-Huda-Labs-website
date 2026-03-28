@@ -16,6 +16,12 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://hudalabs.app/download.html"/>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="Untitled design/10.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="Untitled design/10.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="Untitled design/10.png"/>
+    <link rel="shortcut icon" href="Untitled design/10.png"/>
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://hudalabs.app/download.html"/>
@@ -282,10 +288,10 @@
     <header>
         <nav class="fixed top-0 w-full z-50 transition-all duration-300" role="navigation" aria-label="Main navigation">
             <div class="absolute inset-0 bg-white/60 backdrop-blur-xl border-b border-white/20"></div>
-            <div class="relative flex justify-between items-center px-8 py-5 max-w-7xl mx-auto">
+            <div class="relative flex justify-between items-center px-4 md:px-8 py-4 md:py-5 max-w-7xl mx-auto">
                 <a href="index.html" class="flex items-center gap-2" aria-label="HudaLabs Home - Islamic Learning Apps">
-                    <img src="Untitled design/10.png" alt="HudaLabs Logo - Islamic Education" class="w-10 h-10 object-contain" width="40" height="40">
-                    <span class="text-2xl font-extrabold text-primary tracking-tighter font-headline">HudaLabs</span>
+                    <img src="Untitled design/10.png" alt="HudaLabs Logo - Islamic Education" class="w-8 h-8 md:w-10 md:h-10 object-contain" width="40" height="40">
+                    <span class="text-xl md:text-2xl font-extrabold text-primary tracking-tighter font-headline">HudaLabs</span>
                 </a>
                 <div class="hidden md:flex items-center gap-10">
                     <a class="text-on-surface-variant hover:text-primary transition-colors font-headline font-semibold text-sm tracking-tight" href="index.html" title="Islamic Learning App Homepage">Home</a>
@@ -293,9 +299,29 @@
                     <a class="text-on-surface-variant hover:text-primary transition-colors font-headline font-semibold text-sm tracking-tight" href="privacy.html" title="Privacy Policy">Privacy Policy</a>
                     <a class="text-on-surface-variant hover:text-primary transition-colors font-headline font-semibold text-sm tracking-tight" href="contact.html" title="Contact HudaLabs Support">Contact</a>
                 </div>
-                <a href="download.html" class="bg-primary text-white px-8 py-3 rounded-full font-headline font-bold text-sm tracking-tight hover:shadow-premium hover:-translate-y-0.5 transition-all duration-300" aria-label="Download Islamic Learning App Free">
-                    Download Islamic App Now
-                </a>
+                <div class="flex items-center gap-3">
+                    <a href="download.html" class="hidden sm:inline-block bg-primary text-white px-5 py-2 md:px-8 md:py-3 rounded-full font-headline font-bold text-xs md:text-sm tracking-tight hover:shadow-premium hover:-translate-y-0.5 transition-all duration-300" aria-label="Download Islamic Learning App Free">
+                        Download Islamic App Now
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-primary/10 transition-colors" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu Drawer -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-lg">
+                <div class="flex flex-col px-4 py-4 space-y-1">
+                    <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="index.html">Home</a>
+                    <a class="text-primary font-headline font-bold text-base py-3 px-4 rounded-lg bg-primary/5" href="download.html" aria-current="page">Download</a>
+                    <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="privacy.html">Privacy Policy</a>
+                    <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="contact.html">Contact</a>
+                    <div class="pt-2">
+                        <a href="download.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm">Download App</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -313,7 +339,7 @@
             <div class="relative w-full max-w-md mb-16">
                 <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold/20 rounded-[3rem] blur-3xl scale-90" aria-hidden="true"></div>
                 <div class="relative animate-breathing">
-                    <img src="Untitled (512 x 512 px) (6).png" alt="Noor Ul Huda Islamic Learning App - Free Download for Kids" class="w-64 h-64 md:w-80 md:h-80 mx-auto drop-shadow-2xl rounded-[2rem]" width="320" height="320" loading="eager"/>
+                    <img src="Untitled (512 x 512 px) (6).png" alt="Noor Ul Huda Islamic Learning App - Free Download for Kids" class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 mx-auto drop-shadow-2xl rounded-[2rem]" width="320" height="320" loading="eager"/>
                 </div>
                 <!-- Decorative Elements -->
                 <div class="absolute top-10 left-10 w-12 h-12 bg-primary/20 rounded-xl animate-float-slow" style="animation-delay: 1s;" aria-hidden="true"></div>
@@ -322,10 +348,10 @@
             </div>
             
             <!-- Title & Description -->
-            <h1 id="main-heading" class="font-headline text-4xl md:text-6xl font-extrabold text-on-surface tracking-tight mb-6">
+            <h1 id="main-heading" class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-on-surface tracking-tight mb-4 md:mb-6">
                 Download <span class="text-gradient-primary">Noor Ul Huda Islamic Learning App</span>
             </h1>
-            <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-12">
+            <p class="font-body text-base md:text-lg lg:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-8 md:mb-12">
                 Get the free Islamic education app for kids aged 5-15. Access Quran learning, Hadith, Duas, prayer guidance, and Prophet stories. Download Noor Ul Huda on Google Play, Amazon, Oppo, and Vivo stores.
             </p>
             
@@ -340,55 +366,55 @@
         </section>
 
         <!-- Download Cards Section -->
-        <section class="max-w-6xl mx-auto px-6 pb-24" aria-labelledby="download-stores-heading">
+        <section class="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24" aria-labelledby="download-stores-heading">
             <h2 id="download-stores-heading" class="sr-only">Download Islamic Learning App from App Stores</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 
                 <!-- Google Play Store -->
-                <article class="download-card p-8 rounded-[2rem] text-center flex flex-col items-center h-full" itemscope itemtype="https://schema.org/SoftwareApplication">
-                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-2xl flex items-center justify-center mb-6 shadow-premium" aria-hidden="true">
-                        <span class="material-symbols-outlined text-white text-4xl">play_arrow</span>
+                <article class="download-card p-6 md:p-8 rounded-[2rem] text-center flex flex-col items-center h-full" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary to-primary-light rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-premium" aria-hidden="true">
+                        <span class="material-symbols-outlined text-white text-3xl md:text-4xl">play_arrow</span>
                     </div>
-                    <h3 class="font-headline text-xl font-bold mb-2" itemprop="name">Download on Google Play</h3>
-                    <p class="text-sm text-on-surface-variant mb-6 flex-grow">Get the Islamic learning app for Android smartphones and tablets</p>
+                    <h3 class="font-headline text-lg md:text-xl font-bold mb-2" itemprop="name">Download on Google Play</h3>
+                    <p class="text-xs md:text-sm text-on-surface-variant mb-4 md:mb-6 flex-grow">Get the Islamic learning app for Android smartphones and tablets</p>
                     <a href="https://play.google.com/store/apps/details?id=com.muslimkids.noorulhuda" target="_blank" rel="noopener noreferrer" class="store-badge block mt-auto" aria-label="Download on Google Play - Noor Ul Huda Islamic App" itemprop="downloadUrl">
-                        <img src="en_badge_web_generic.png" alt="Download on Google Play - Noor Ul Huda Islamic App" class="h-[50px] w-auto mx-auto object-contain" width="180" height="50" loading="lazy"/>
+                        <img src="en_badge_web_generic.png" alt="Download on Google Play - Noor Ul Huda Islamic App" class="h-10 md:h-[50px] w-auto mx-auto object-contain" width="180" height="50" loading="lazy"/>
                     </a>
                 </article>
                 
                 <!-- Amazon App Store -->
-                <article class="download-card p-8 rounded-[2rem] text-center flex flex-col items-center h-full" itemscope itemtype="https://schema.org/SoftwareApplication">
-                    <div class="w-20 h-20 bg-gradient-to-br from-[#FF9900] to-[#FFB84D] rounded-2xl flex items-center justify-center mb-6 shadow-premium" aria-hidden="true">
-                        <span class="material-symbols-outlined text-white text-4xl">shopping_bag</span>
+                <article class="download-card p-6 md:p-8 rounded-[2rem] text-center flex flex-col items-center h-full" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#FF9900] to-[#FFB84D] rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-premium" aria-hidden="true">
+                        <span class="material-symbols-outlined text-white text-3xl md:text-4xl">shopping_bag</span>
                     </div>
-                    <h3 class="font-headline text-xl font-bold mb-2" itemprop="name">Available on Amazon Appstore</h3>
-                    <p class="text-sm text-on-surface-variant mb-6 flex-grow">Install Islamic app for Amazon Fire tablets and Android devices</p>
+                    <h3 class="font-headline text-lg md:text-xl font-bold mb-2" itemprop="name">Available on Amazon Appstore</h3>
+                    <p class="text-xs md:text-sm text-on-surface-variant mb-4 md:mb-6 flex-grow">Install Islamic app for Amazon Fire tablets and Android devices</p>
                     <a href="https://www.amazon.com/dp/B0GQTLWXDC" target="_blank" rel="noopener noreferrer" class="store-badge block mt-auto" aria-label="Available on Amazon Appstore - Muslim Kids Learning App" itemprop="downloadUrl">
-                        <img src="background2.png" alt="Available on Amazon Appstore" class="h-[50px] w-auto mx-auto object-contain rounded-lg" width="180" height="50" loading="lazy"/>
+                        <img src="background2.png" alt="Available on Amazon Appstore" class="h-10 md:h-[50px] w-auto mx-auto object-contain rounded-lg" width="180" height="50" loading="lazy"/>
                     </a>
                 </article>
                 
                 <!-- Oppo App Market -->
-                <article class="download-card p-8 rounded-[2rem] text-center flex flex-col items-center h-full" itemscope itemtype="https://schema.org/SoftwareApplication">
-                    <div class="w-20 h-20 bg-gradient-to-br from-[#1FAB89] to-[#00A86B] rounded-2xl flex items-center justify-center mb-6 shadow-premium" aria-hidden="true">
-                        <span class="material-symbols-outlined text-white text-4xl">smartphone</span>
+                <article class="download-card p-6 md:p-8 rounded-[2rem] text-center flex flex-col items-center h-full" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#1FAB89] to-[#00A86B] rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-premium" aria-hidden="true">
+                        <span class="material-symbols-outlined text-white text-3xl md:text-4xl">smartphone</span>
                     </div>
-                    <h3 class="font-headline text-xl font-bold mb-2" itemprop="name">Get it on Oppo Store</h3>
-                    <p class="text-sm text-on-surface-variant mb-6 flex-grow">Download Islamic education app for Oppo and OnePlus devices</p>
+                    <h3 class="font-headline text-lg md:text-xl font-bold mb-2" itemprop="name">Get it on Oppo Store</h3>
+                    <p class="text-xs md:text-sm text-on-surface-variant mb-4 md:mb-6 flex-grow">Download Islamic education app for Oppo and OnePlus devices</p>
                     <a href="#" class="store-badge block mt-auto" aria-label="Get it on Oppo Store - Islamic Learning for Kids" itemprop="downloadUrl">
-                        <img src="oppo-app-market-btn-1.png" alt="Get it on Oppo Store" class="h-[50px] w-auto mx-auto object-contain rounded-lg" width="180" height="50" loading="lazy"/>
+                        <img src="oppo-app-market-btn-1.png" alt="Get it on Oppo Store" class="h-10 md:h-[50px] w-auto mx-auto object-contain rounded-lg" width="180" height="50" loading="lazy"/>
                     </a>
                 </article>
                 
                 <!-- Vivo App Store -->
-                <article class="download-card p-8 rounded-[2rem] text-center flex flex-col items-center h-full" itemscope itemtype="https://schema.org/SoftwareApplication">
-                    <div class="w-20 h-20 bg-gradient-to-br from-[#415FFF] to-[#5B7FFF] rounded-2xl flex items-center justify-center mb-6 shadow-premium" aria-hidden="true">
-                        <span class="material-symbols-outlined text-white text-4xl">phone_android</span>
+                <article class="download-card p-6 md:p-8 rounded-[2rem] text-center flex flex-col items-center h-full" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#415FFF] to-[#5B7FFF] rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-premium" aria-hidden="true">
+                        <span class="material-symbols-outlined text-white text-3xl md:text-4xl">phone_android</span>
                     </div>
-                    <h3 class="font-headline text-xl font-bold mb-2" itemprop="name">Download from Vivo Store</h3>
-                    <p class="text-sm text-on-surface-variant mb-6 flex-grow">Install free Muslim kids app for Vivo smartphones</p>
+                    <h3 class="font-headline text-lg md:text-xl font-bold mb-2" itemprop="name">Download from Vivo Store</h3>
+                    <p class="text-xs md:text-sm text-on-surface-variant mb-4 md:mb-6 flex-grow">Install free Muslim kids app for Vivo smartphones</p>
                     <a href="#" class="store-badge block mt-auto" aria-label="Download from Vivo Store - Quran & Islamic Stories" itemprop="downloadUrl">
-                        <img src="vivo-app-market-btn-1.png" alt="Download from Vivo Store" class="h-[50px] w-auto mx-auto object-contain rounded-lg" width="180" height="50" loading="lazy"/>
+                        <img src="vivo-app-market-btn-1.png" alt="Download from Vivo Store" class="h-10 md:h-[50px] w-auto mx-auto object-contain rounded-lg" width="180" height="50" loading="lazy"/>
                     </a>
                 </article>
                 

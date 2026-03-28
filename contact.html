@@ -16,6 +16,12 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://hudalabs.app/contact.html"/>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="Untitled design/10.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="Untitled design/10.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="Untitled design/10.png"/>
+    <link rel="shortcut icon" href="Untitled design/10.png"/>
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://hudalabs.app/contact.html"/>
@@ -153,10 +159,10 @@
     <!-- TopNavBar -->
     <header>
         <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm" role="navigation" aria-label="Main navigation">
-            <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex justify-between items-center px-4 md:px-6 py-3 md:py-4 max-w-7xl mx-auto">
                 <a href="index.html" class="flex items-center gap-2" aria-label="HudaLabs Home">
-                    <img src="Untitled design/10.png" alt="HudaLabs Islamic Education Logo" class="w-10 h-10 object-contain" width="40" height="40" loading="eager">
-                    <span class="text-2xl font-extrabold text-primary tracking-tighter font-headline">HudaLabs</span>
+                    <img src="Untitled design/10.png" alt="HudaLabs Islamic Education Logo" class="w-8 h-8 md:w-10 md:h-10 object-contain" width="40" height="40" loading="eager">
+                    <span class="text-xl md:text-2xl font-extrabold text-primary tracking-tighter font-headline">HudaLabs</span>
                 </a>
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center gap-8">
@@ -165,9 +171,29 @@
                     <a class="font-headline font-semibold text-sm tracking-tight text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
                     <a class="font-headline font-bold text-sm tracking-tight text-primary border-b-2 border-primary pb-1" href="contact.html" aria-current="page">Contact</a>
                 </div>
-                <a href="download.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all duration-300 active:scale-95">
-                    Download Now
-                </a>
+                <div class="flex items-center gap-3">
+                    <a href="download.html" class="hidden sm:inline-block bg-primary text-on-primary px-5 py-2 md:px-6 md:py-2.5 rounded-full font-semibold text-xs md:text-sm hover:opacity-90 transition-all duration-300 active:scale-95">
+                        Download Now
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-primary/10 transition-colors" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu Drawer -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-lg">
+                <div class="flex flex-col px-4 py-4 space-y-1">
+                    <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="index.html">Home</a>
+                    <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="download.html">Download</a>
+                    <a class="text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-headline font-semibold text-base py-3 px-4 rounded-lg" href="privacy.html">Privacy Policy</a>
+                    <a class="text-primary font-headline font-bold text-base py-3 px-4 rounded-lg bg-primary/5" href="contact.html" aria-current="page">Contact</a>
+                    <div class="pt-2">
+                        <a href="download.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm">Download Now</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -176,10 +202,10 @@
         <!-- Hero Header -->
         <section class="max-w-3xl w-full text-center mb-16 space-y-4">
             <span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-widest uppercase">Contact Us</span>
-            <h1 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface tracking-tight leading-tight">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold text-on-surface tracking-tight leading-tight">
                 Contact HudaLabs Support Team
             </h1>
-            <p class="text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed max-w-2xl mx-auto">
+            <p class="text-base md:text-lg lg:text-xl text-on-surface-variant font-medium leading-relaxed max-w-2xl mx-auto">
                 We'd love to hear from you. Whether you have a question about Noor Ul Huda app, need Islamic learning support, or just want to say salam.
             </p>
         </section>
@@ -187,17 +213,17 @@
         <!-- Contact Form Container -->
         <section class="max-w-2xl w-full" aria-labelledby="contact-form-heading">
             <h2 id="contact-form-heading" class="sr-only">Contact Form</h2>
-            <div class="bg-surface-container-lowest p-8 md:p-12 rounded-lg shadow-[0_20px_40px_rgba(0,107,84,0.06)] relative overflow-hidden group">
+            <div class="bg-surface-container-lowest p-6 md:p-8 lg:p-12 rounded-lg shadow-[0_20px_40px_rgba(0,107,84,0.06)] relative overflow-hidden group">
                 <!-- Decorative Geometric Accent -->
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-tertiary-container/10 transition-colors duration-700"></div>
                 
-                <form class="space-y-8 relative z-10" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="Contact support form">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <form class="space-y-6 md:space-y-8 relative z-10" action="https://formspree.io/f/xwvrlyyp" method="POST" aria-label="Contact support form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                         <!-- Name Field -->
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-on-surface-variant ml-1" for="name">Full Name <span class="text-red-500" aria-label="required">*</span></label>
                             <input 
-                                class="w-full px-5 py-4 bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all placeholder:text-outline" 
+                                class="w-full px-4 py-3 md:px-5 md:py-4 bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all placeholder:text-outline" 
                                 id="name" 
                                 name="name" 
                                 placeholder="Enter your full name" 
@@ -213,7 +239,7 @@
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-on-surface-variant ml-1" for="email">Email Address <span class="text-red-500" aria-label="required">*</span></label>
                             <input 
-                                class="w-full px-5 py-4 bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all placeholder:text-outline" 
+                                class="w-full px-4 py-3 md:px-5 md:py-4 bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all placeholder:text-outline" 
                                 id="email" 
                                 name="email" 
                                 placeholder="your.email@example.com" 

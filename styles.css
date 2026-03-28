@@ -334,3 +334,33 @@
         display: none !important;
     }
 }
+
+/* ============================================
+   Mobile-First Responsive Styles
+   ============================================ */
+
+/* Small screens optimization */
+@media (max-width: 640px) {
+    /* Reduce blur effects for better mobile performance */
+    .blur-\[100px\], .blur-\[150px\], .blur-\[80px\], .blur-\[60px\] {
+        filter: blur(40px);
+    }
+    
+    /* Carousel card adjustments */
+    .carousel-card {
+        max-width: 220px;
+    }
+    
+    /* Better touch targets */
+    button, a {
+        min-height: 44px;
+    }
+}
+
+/* Very small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .carousel-card {
+        max-width: 180px;
+        width: 50vw;
+    }
+}
