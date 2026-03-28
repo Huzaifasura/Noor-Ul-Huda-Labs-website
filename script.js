@@ -51,14 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 3D Carousel Logic - SEO Optimized with descriptive alt text
 const carouselImages = [
-    { id: 1, src: '1.png', alt: 'Noor Ul Huda Islamic App Home Screen - Interactive Islamic Learning Interface' },
-    { id: 2, src: '2.png', alt: 'Journey Through Prophet Stories - Islamic Education for Kids' },
-    { id: 3, src: '3.png', alt: 'Build Daily Salah Prayer Habit - Muslim Kids Prayer Tracker' },
-    { id: 4, src: '4.png', alt: 'Learn Namaz Step-by-Step - Complete Islamic Prayer Guide' },
-    { id: 5, src: '5.png', alt: 'Learn Essential Daily Duas - Islamic Supplications for Children' },
-    { id: 6, src: '6.png', alt: 'Learn Arabic Letters and Alphabet - Quran Reading Basics' },
-    { id: 7, src: '7.png', alt: 'Word-by-Word Quran Learning - Interactive Quran Translation' },
-    { id: 8, src: '8.png', alt: 'Islamic Knowledge Quiz - Test Your Memory and Understanding' }
+    { id: 1, src: '1.png', alt: 'Noor Ul Huda Islamic App Home Screen - Interactive Islamic Learning Interface', width: 300, height: 600 },
+    { id: 2, src: '2.png', alt: 'Journey Through Prophet Stories - Islamic Education for Kids', width: 300, height: 600 },
+    { id: 3, src: '3.png', alt: 'Build Daily Salah Prayer Habit - Muslim Kids Prayer Tracker', width: 300, height: 600 },
+    { id: 4, src: '4.png', alt: 'Learn Namaz Step-by-Step - Complete Islamic Prayer Guide', width: 300, height: 600 },
+    { id: 5, src: '5.png', alt: 'Learn Essential Daily Duas - Islamic Supplications for Children', width: 300, height: 600 },
+    { id: 6, src: '6.png', alt: 'Learn Arabic Letters and Alphabet - Quran Reading Basics', width: 300, height: 600 },
+    { id: 7, src: '7.png', alt: 'Word-by-Word Quran Learning - Interactive Quran Translation', width: 300, height: 600 },
+    { id: 8, src: '8.png', alt: 'Islamic Knowledge Quiz - Test Your Memory and Understanding', width: 300, height: 600 }
 ];
 
 let carouselActiveIndex = 3;
@@ -82,7 +82,7 @@ function initCarousel() {
         const loadingAttr = index < 3 ? 'eager' : 'lazy';
         
         card.innerHTML = `
-            <img src="${img.src}" alt="${img.alt}" draggable="false" loading="${loadingAttr}" width="300" height="600">
+            <img src="${img.src}" alt="${img.alt}" draggable="false" loading="${loadingAttr}" width="${img.width}" height="${img.height}" decoding="async">
             <div class="carousel-card-border"></div>
         `;
         

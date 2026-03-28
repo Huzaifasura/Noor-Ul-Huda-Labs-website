@@ -5,50 +5,66 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>HudaLabs - Premium Islamic Learning Reimagined</title>
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Preconnect to critical origins for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Preload LCP image for faster rendering -->
+    <link rel="preload" as="image" href="Untitled (512 x 512 px) (6).png" fetchpriority="high">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Critical CSS inlined for faster FCP -->
+    <style>
+        /* Critical above-the-fold styles */
+        *,::after,::before{box-sizing:border-box;border:0 solid #e5e7eb}
+        html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,sans-serif}
+        body{margin:0;line-height:inherit;background-color:#fcfdfc;font-family:Manrope,ui-sans-serif,system-ui,sans-serif;color:#0a1f1a;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        img,video{max-width:100%;height:auto;display:block}
+        a{color:inherit;text-decoration:none}
+        .scroll-smooth{scroll-behavior:smooth}
+        /* Hide content until fonts load to prevent FOUT */
+        .fonts-loading body{opacity:0}
+        .fonts-loaded body{opacity:1;transition:opacity 0.1s ease-in}
+        /* Critical layout styles */
+        .fixed{position:fixed}.relative{position:relative}.absolute{position:absolute}
+        .top-0{top:0}.w-full{width:100%}.z-50{z-index:50}
+        .flex{display:flex}.hidden{display:none}.grid{display:grid}
+        .items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}
+        .gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-10{gap:2.5rem}
+        .px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}
+        .py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}
+        .pt-28{padding-top:7rem}.pb-24{padding-bottom:6rem}
+        .text-center{text-align:center}.text-left{text-align:left}
+        .text-2xl{font-size:1.5rem;line-height:2rem}.text-5xl{font-size:3rem;line-height:1}
+        .font-extrabold{font-weight:800}.font-bold{font-weight:700}
+        .text-white{color:#fff}.text-primary{color:#006b54}
+        .bg-white{background-color:#fff}.bg-primary{background-color:#006b54}
+        .rounded-full{border-radius:9999px}
+        .max-w-7xl{max-width:80rem}.mx-auto{margin-left:auto;margin-right:auto}
+        .overflow-hidden{overflow:hidden}
+        @media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:flex{display:flex}.md\:text-left{text-align:left}.md\:text-7xl{font-size:4.5rem;line-height:1}}
+    </style>
+    
+    <!-- Google Fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/></noscript>
+    
+    <!-- Material Symbols - loaded async -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/></noscript>
     
     <!-- Custom CSS -->
     <link href="styles.css" rel="stylesheet"/>
     
-    <!-- Tailwind Config -->
+    <!-- Tailwind CSS CDN - deferred -->
     <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#006b54",
-                        "primary-light": "#1FAB89",
-                        "gold": "#D4AF37",
-                        "surface": "#fcfdfc",
-                        "on-surface": "#0a1f1a",
-                        "on-surface-variant": "#4a5a54",
-                        "surface-container": "#f1f4f3",
-                    },
-                    fontFamily: {
-                        "headline": ["Plus Jakarta Sans"],
-                        "body": ["Manrope"],
-                    },
-                    borderRadius: {
-                        "DEFAULT": "1rem",
-                        "lg": "1.5rem",
-                        "xl": "2.5rem",
-                        "2xl": "3.5rem",
-                        "full": "9999px"
-                    },
-                    boxShadow: {
-                        'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
-                        'premium': '0 30px 60px -12px rgba(0, 107, 84, 0.12)',
-                    }
-                },
-            },
-        }
+        tailwind = {config:{darkMode:"class",theme:{extend:{colors:{"primary":"#006b54","primary-light":"#1FAB89","gold":"#D4AF37","surface":"#fcfdfc","on-surface":"#0a1f1a","on-surface-variant":"#4a5a54","surface-container":"#f1f4f3"},fontFamily:{"headline":["Plus Jakarta Sans"],"body":["Manrope"]},borderRadius:{"DEFAULT":"1rem","lg":"1.5rem","xl":"2.5rem","2xl":"3.5rem","full":"9999px"},boxShadow:{'soft':'0 20px 40px -15px rgba(0, 0, 0, 0.05)','premium':'0 30px 60px -12px rgba(0, 107, 84, 0.12)'}}}}}
     </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" defer></script>
 </head>
 <body class="bg-surface font-body text-on-surface antialiased overflow-x-hidden">
     
@@ -57,7 +73,7 @@
         <div class="absolute inset-0 bg-white/60 backdrop-blur-xl border-b border-white/20"></div>
         <div class="relative flex justify-between items-center px-8 py-5 max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-2">
-                <img src="Untitled design/10.png" alt="HudaLabs Logo" class="w-10 h-10 object-contain">
+                <img src="Untitled design/10.png" alt="HudaLabs Logo" class="w-10 h-10 object-contain" width="40" height="40" loading="eager">
                 <span class="text-2xl font-extrabold text-primary tracking-tighter font-headline">HudaLabs</span>
             </a>
             <div class="hidden md:flex items-center gap-10">
@@ -91,17 +107,17 @@
                     </p>
                     <div class="flex flex-col gap-4 items-center md:items-start">
                         <a href="https://play.google.com/store/apps/details?id=com.muslimkids.noorulhuda" target="_blank" rel="noopener noreferrer" class="group hover:scale-105 transition-transform duration-300 inline-block">
-                            <img src="en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 md:h-20">
+                            <img src="en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 md:h-20" width="200" height="80" loading="eager">
                         </a>
                         <div class="flex items-center justify-center gap-3 w-full md:w-auto md:justify-start pl-4">
                             <a href="https://www.amazon.com/dp/B0GQTLWXDC" target="_blank" rel="noopener noreferrer" class="group relative w-12 h-12 flex items-center justify-center bg-white border border-on-surface/10 rounded-xl overflow-hidden hover:shadow-premium transition-all shadow-lg" title="Amazon Appstore">
-                                <img src="amazon-store.png.png" alt="Amazon Appstore" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                                <img src="amazon-store.png.png" alt="Amazon Appstore" class="w-full h-full object-cover group-hover:scale-110 transition-transform" width="48" height="48" loading="lazy">
                             </a>
                             <a href="#" class="group relative w-12 h-12 flex items-center justify-center bg-white border border-on-surface/10 rounded-xl overflow-hidden hover:shadow-premium transition-all shadow-lg" title="Oppo App Market">
-                                <img src="oppo-store.png.jpg" alt="Oppo App Market" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                                <img src="oppo-store.png.jpg" alt="Oppo App Market" class="w-full h-full object-cover group-hover:scale-110 transition-transform" width="48" height="48" loading="lazy">
                             </a>
                             <a href="#" class="group relative w-12 h-12 flex items-center justify-center bg-white border border-on-surface/10 rounded-xl overflow-hidden hover:shadow-premium transition-all shadow-lg" title="Vivo App Store">
-                                <img src="vivo-store.png.webp" alt="Vivo App Store" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                                <img src="vivo-store.png.webp" alt="Vivo App Store" class="w-full h-full object-cover group-hover:scale-110 transition-transform" width="48" height="48" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -119,6 +135,10 @@
                                 alt="Noor Ul Huda App Logo" 
                                 class="relative w-[280px] md:w-[380px] h-[280px] md:h-[380px] object-contain drop-shadow-[0_35px_60px_rgba(212,175,55,0.4)] hover:drop-shadow-[0_45px_80px_rgba(212,175,55,0.5)] transition-all duration-500 hover:scale-105 hover:-rotate-3" 
                                 src="Untitled (512 x 512 px) (6).png"
+                                width="380"
+                                height="380"
+                                fetchpriority="high"
+                                loading="eager"
                             />
                         </div>
                     </div>
@@ -390,7 +410,7 @@
         <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center px-10 py-20 max-w-7xl mx-auto gap-12">
             <div class="max-w-xs">
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="Untitled design/9.png" alt="HudaLabs Logo" class="w-10 h-10 object-contain">
+                    <img src="Untitled design/9.png" alt="HudaLabs Logo" class="w-10 h-10 object-contain" width="40" height="40" loading="lazy">
                     <span class="text-2xl font-black text-white tracking-tighter font-headline">HudaLabs</span>
                 </div>
                 <p class="text-white/50 font-body text-sm leading-relaxed mb-6">Pioneering digital experiences that bridge the gap between tradition and technology for the global Muslim community.</p>
@@ -451,7 +471,7 @@
         </div>
     </footer>
 
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+    <!-- Custom JavaScript - deferred for better performance -->
+    <script src="script.js" defer></script>
 </body>
 </html>
