@@ -460,8 +460,8 @@ if (document.readyState === 'loading') {
     
     // Preload hero images for better Core Web Vitals
     const criticalImages = [
-        'Untitled design/10.png', // Logo
-        'Untitled (512 x 512 px) (6).png' // Hero image
+        'Untitled design/10.webp', // Logo
+        'Untitled (512 x 512 px) (6).webp' // Hero image
     ];
     
     if ('requestIdleCallback' in window) {
