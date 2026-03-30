@@ -95,14 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 3D Carousel Logic - SEO Optimized with descriptive alt text
 const carouselImages = [
-    { id: 1, src: '1.png', alt: 'Noor Ul Huda Islamic App Home Screen - Interactive Islamic Learning Interface', width: 300, height: 600 },
-    { id: 2, src: '2.png', alt: 'Journey Through Prophet Stories - Islamic Education for Kids', width: 300, height: 600 },
-    { id: 3, src: '3.png', alt: 'Build Daily Salah Prayer Habit - Muslim Kids Prayer Tracker', width: 300, height: 600 },
-    { id: 4, src: '4.png', alt: 'Learn Namaz Step-by-Step - Complete Islamic Prayer Guide', width: 300, height: 600 },
-    { id: 5, src: '5.png', alt: 'Learn Essential Daily Duas - Islamic Supplications for Children', width: 300, height: 600 },
-    { id: 6, src: '6.png', alt: 'Learn Arabic Letters and Alphabet - Quran Reading Basics', width: 300, height: 600 },
-    { id: 7, src: '7.png', alt: 'Word-by-Word Quran Learning - Interactive Quran Translation', width: 300, height: 600 },
-    { id: 8, src: '8.png', alt: 'Islamic Knowledge Quiz - Test Your Memory and Understanding', width: 300, height: 600 }
+    { id: 1, src: '1.webp', alt: 'Noor Ul Huda Islamic App Home Screen - Interactive Islamic Learning Interface', width: 300, height: 600 },
+    { id: 2, src: '2.webp', alt: 'Journey Through Prophet Stories - Islamic Education for Kids', width: 300, height: 600 },
+    { id: 3, src: '3.webp', alt: 'Build Daily Salah Prayer Habit - Muslim Kids Prayer Tracker', width: 300, height: 600 },
+    { id: 4, src: '4.webp', alt: 'Learn Namaz Step-by-Step - Complete Islamic Prayer Guide', width: 300, height: 600 },
+    { id: 5, src: '5.webp', alt: 'Learn Essential Daily Duas - Islamic Supplications for Children', width: 300, height: 600 },
+    { id: 6, src: '6.webp', alt: 'Learn Arabic Letters and Alphabet - Quran Reading Basics', width: 300, height: 600 },
+    { id: 7, src: '7.webp', alt: 'Word-by-Word Quran Learning - Interactive Quran Translation', width: 300, height: 600 },
+    { id: 8, src: '8.webp', alt: 'Islamic Knowledge Quiz - Test Your Memory and Understanding', width: 300, height: 600 }
 ];
 
 let carouselActiveIndex = 3;
