@@ -287,170 +287,30 @@ if (document.readyState === 'loading') {
 }
 
 // ============================================
-// Custom Cursor - Performance Optimized
+// Custom SVG Cursor - Lightweight Implementation
 // ============================================
 (function() {
-    // Only enable on desktop devices (performance optimization)
+    // Only enable on desktop devices
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     const isSmallScreen = window.innerWidth < 768;
     
-    // Skip custom cursor on mobile for better performance
+    // Skip custom cursor on mobile
     if (isTouchDevice || isSmallScreen) return;
     
-    // Create cursor elements
-    const cursorDot = document.createElement('div');
-    cursorDot.className = 'cursor-dot';
-    
-    const cursorRing = document.createElement('div');
-    cursorRing.className = 'cursor-ring';
-    
-    const cursorGlow = document.createElement('div');
-    cursorGlow.className = 'cursor-glow';
-    
-    document.body.appendChild(cursorGlow);
-    document.body.appendChild(cursorRing);
-    document.body.appendChild(cursorDot);
+    // Enable custom cursor class on body
     document.body.classList.add('custom-cursor-enabled');
     
-    // Cursor position variables
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
-    let glowX = 0, glowY = 0;
-    
-    // Track mouse position with throttling for performance
-    let rafId;
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        // Use requestAnimationFrame for smooth performance
-        if (!rafId) {
-            rafId = requestAnimationFrame(() => {
-                // Dot follows instantly
-                cursorDot.style.left = mouseX + 'px';
-                cursorDot.style.top = mouseY + 'px';
-                rafId = null;
-            });
-        }
-        
-        // Create occasional particle trail (reduced frequency for performance)
-        if (Math.random() > 0.95) {
-            createParticle(mouseX, mouseY);
-        }
-    });
-    
-    // Smooth ring and glow animation
-    function animateCursor() {
-        // Faster follow for ring
-        ringX += (mouseX - ringX) * 0.35;
-        ringY += (mouseY - ringY) * 0.35;
-        cursorRing.style.left = ringX + 'px';
-        cursorRing.style.top = ringY + 'px';
-        
-        // Faster follow for glow
-        glowX += (mouseX - glowX) * 0.25;
-        glowY += (mouseY - glowY) * 0.25;
-        cursorGlow.style.left = glowX + 'px';
-        cursorGlow.style.top = glowY + 'px';
-        
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-    
-    // Interactive elements hover detection
-    const interactiveSelectors = 'a, button, input, textarea, select, [role="button"], .carousel-card, .glass-card, .download-card, .store-badge';
-    
-    document.addEventListener('mouseover', (e) => {
-        if (e.target.closest(interactiveSelectors)) {
-            document.body.classList.add('cursor-hover');
-        }
-    });
-    
-    document.addEventListener('mouseout', (e) => {
-        if (e.target.closest(interactiveSelectors)) {
-            document.body.classList.remove('cursor-hover');
-        }
-    });
-    
-    // Click effect
-    document.addEventListener('mousedown', () => {
-        document.body.classList.add('cursor-click');
-        // Create burst of particles on click
-        for (let i = 0; i < 5; i++) {
-            setTimeout(() => createParticle(mouseX, mouseY, true), i * 30);
-        }
-    });
-    
-    document.addEventListener('mouseup', () => {
-        document.body.classList.remove('cursor-click');
-    });
-    
-    // Hide cursor when leaving window
-    document.addEventListener('mouseleave', () => {
-        cursorDot.style.opacity = '0';
-        cursorRing.style.opacity = '0';
-        cursorGlow.style.opacity = '0';
-    });
-    
-    document.addEventListener('mouseenter', () => {
-        cursorDot.style.opacity = '1';
-        cursorRing.style.opacity = '1';
-        cursorGlow.style.opacity = '0.8';
-    });
-    
-    // Create Islamic star particle
-    function createParticle(x, y, isBurst = false) {
-        const particle = document.createElement('div');
-        particle.className = 'cursor-particle';
-        
-        // Random size for particles
-        const size = isBurst ? Math.random() * 15 + 10 : Math.random() * 10 + 5;
-        particle.style.width = size + 'px';
-        particle.style.height = size + 'px';
-        
-        // Offset for burst effect
-        const offsetX = isBurst ? (Math.random() - 0.5) * 40 : 0;
-        const offsetY = isBurst ? (Math.random() - 0.5) * 40 : 0;
-        particle.style.left = (x + offsetX) + 'px';
-        particle.style.top = (y + offsetY) + 'px';
-        
-        // Islamic 8-point star SVG
-        const colors = ['#006b54', '#1FAB89', '#D4AF37'];
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        
-        particle.innerHTML = `
-            <svg viewBox="0 0 100 100" fill="${color}">
-                <path d="M50 0 L58 35 L100 50 L58 65 L50 100 L42 65 L0 50 L42 35 Z"/>
-            </svg>
-        `;
-        
-        document.body.appendChild(particle);
-        
-        // Remove particle after animation with cleanup
-        setTimeout(() => {
-            if (particle && particle.parentNode) {
-                particle.remove();
-            }
-        }, 800);
-    }
-    
-    // Handle window resize with debouncing for performance
+    // Handle window resize
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
             if (window.innerWidth < 768) {
                 document.body.classList.remove('custom-cursor-enabled');
-                cursorDot.style.display = 'none';
-                cursorRing.style.display = 'none';
-                cursorGlow.style.display = 'none';
             } else {
                 document.body.classList.add('custom-cursor-enabled');
-                cursorDot.style.display = 'block';
-                cursorRing.style.display = 'block';
-                cursorGlow.style.display = 'block';
             }
-        }, 150); // Debounce resize events
+        }, 150);
     });
 })();
 

@@ -212,126 +212,53 @@
 }
 
 /* ============================================
-   Custom Cursor Styles
+   Custom SVG Cursor Styles - Using Actual SVG Files
    ============================================ */
 
-/* Hide default cursor on desktop */
 @media (min-width: 768px) {
-    body.custom-cursor-enabled,
-    body.custom-cursor-enabled * {
-        cursor: none !important;
+    /* Default Arrow Cursor */
+    body.custom-cursor-enabled {
+        cursor: url('corsor/Arrow.svg') 9 4, auto;
     }
-}
-
-/* Main cursor dot */
-.cursor-dot {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background: linear-gradient(135deg, #006b54, #1FAB89);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
-}
-
-/* Outer ring cursor */
-.cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(0, 107, 84, 0.5);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99998;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-}
-
-/* Cursor glow effect */
-.cursor-glow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, rgba(0, 107, 84, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99997;
-    transform: translate(-50%, -50%);
-    opacity: 0.8;
-}
-
-/* Hover state on interactive elements */
-.cursor-hover .cursor-dot {
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(135deg, #D4AF37, #F3E0AC);
-}
-
-.cursor-hover .cursor-ring {
-    width: 60px;
-    height: 60px;
-    border-color: rgba(212, 175, 55, 0.6);
-    background: rgba(212, 175, 55, 0.05);
-}
-
-.cursor-hover .cursor-glow {
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
-}
-
-/* Click/active state */
-.cursor-click .cursor-dot {
-    transform: translate(-50%, -50%) scale(0.8);
-}
-
-.cursor-click .cursor-ring {
-    width: 35px;
-    height: 35px;
-    border-width: 3px;
-}
-
-/* Islamic star trail particles */
-.cursor-particle {
-    position: fixed;
-    pointer-events: none;
-    z-index: 99996;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
-    animation: particle-fade 0.8s ease-out forwards;
-}
-
-.cursor-particle svg {
-    width: 100%;
-    height: 100%;
-}
-
-@keyframes particle-fade {
-    0% {
-        opacity: 0.8;
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    
+    /* Pointer Hand Cursor - For interactive elements */
+    body.custom-cursor-enabled a,
+    body.custom-cursor-enabled button,
+    body.custom-cursor-enabled [role="button"],
+    body.custom-cursor-enabled .carousel-card,
+    body.custom-cursor-enabled .glass-card,
+    body.custom-cursor-enabled .download-card,
+    body.custom-cursor-enabled .store-badge,
+    body.custom-cursor-enabled input[type="submit"],
+    body.custom-cursor-enabled input[type="button"],
+    body.custom-cursor-enabled select,
+    body.custom-cursor-enabled label[for] {
+        cursor: url('corsor/Pointer.svg') 16 5, pointer;
     }
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.3) rotate(180deg);
+    
+    /* Open Hand / Grab Cursor */
+    body.custom-cursor-enabled [data-cursor="grab"],
+    body.custom-cursor-enabled .draggable {
+        cursor: url('corsor/Grab.svg') 16 16, grab;
     }
-}
-
-/* Hide custom cursor on mobile/touch devices */
-@media (max-width: 767px), (hover: none), (pointer: coarse) {
-    .cursor-dot,
-    .cursor-ring,
-    .cursor-glow,
-    .cursor-particle {
-        display: none !important;
+    
+    /* Grabbing Hand Cursor - Closed fist */
+    body.custom-cursor-enabled [data-cursor="grabbing"],
+    body.custom-cursor-enabled .dragging {
+        cursor: url('corsor/Grabbed.svg') 16 16, grabbing;
+    }
+    
+    /* Text / I-Beam Cursor - For text inputs */
+    body.custom-cursor-enabled input[type="text"],
+    body.custom-cursor-enabled input[type="email"],
+    body.custom-cursor-enabled input[type="password"],
+    body.custom-cursor-enabled input[type="search"],
+    body.custom-cursor-enabled input[type="tel"],
+    body.custom-cursor-enabled input[type="url"],
+    body.custom-cursor-enabled input[type="number"],
+    body.custom-cursor-enabled textarea,
+    body.custom-cursor-enabled [contenteditable="true"] {
+        cursor: url('corsor/Text.svg') 16 16, text;
     }
 }
 
