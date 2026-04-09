@@ -211,6 +211,23 @@
     background-color: #006b54;
 }
 
+/* Testimonials Indicators */
+.testimonial-indicator {
+    width: 0.55rem;
+    height: 0.55rem;
+    border: 0;
+    padding: 0;
+    border-radius: 9999px;
+    background: rgba(0, 107, 84, 0.28);
+    transition: all 0.25s ease;
+    flex: 0 0 auto;
+}
+
+.testimonial-indicator[aria-selected="true"] {
+    width: 1.8rem;
+    background: #006b54;
+}
+
 /* ============================================
    Custom SVG Cursor Styles - Using Actual SVG Files
    ============================================ */
@@ -279,8 +296,15 @@
     }
     
     /* Better touch targets */
-    button, a {
+    button:not(.carousel-dot):not(.testimonial-indicator), a {
         min-height: 44px;
+    }
+
+    /* Keep slider dots compact on mobile */
+    #testimonials-indicators .testimonial-indicator,
+    #carousel-indicators .carousel-dot {
+        min-height: 0;
+        min-width: 0;
     }
 }
 

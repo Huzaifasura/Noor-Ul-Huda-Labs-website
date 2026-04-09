@@ -237,8 +237,8 @@
                             <a href="https://www.amazon.com/dp/B0GQTLWXDC" target="_blank" rel="noopener noreferrer" class="group relative w-12 h-12 flex items-center justify-center bg-white border border-on-surface/10 rounded-xl overflow-hidden hover:shadow-premium transition-all shadow-lg" title="Download from Amazon Appstore" aria-label="Download Noor Ul Huda from Amazon Appstore">
                                 <img src="amazon-store.png.webp" alt="Amazon Appstore icon" class="w-full h-full object-cover group-hover:scale-110 transition-transform" width="48" height="48" loading="lazy">
                             </a>
-                            <a href="#" class="group relative w-12 h-12 flex items-center justify-center bg-white border border-on-surface/10 rounded-xl overflow-hidden hover:shadow-premium transition-all shadow-lg" title="Coming soon on Oppo App Market" aria-label="Oppo App Market - Coming Soon">
-                                <img src="oppo-store.png.webp" alt="Oppo App Market icon" class="w-full h-full object-cover group-hover:scale-110 transition-transform" width="48" height="48" loading="lazy">
+                            <a href="https://appgallery.huawei.com/app/C117300397" target="_blank" rel="noopener noreferrer" class="group relative w-12 h-12 flex items-center justify-center rounded-full overflow-hidden hover:shadow-premium transition-all shadow-lg" title="Download from Huawei AppGallery" aria-label="Download Noor Ul Huda from Huawei AppGallery">
+                                <img src="huwai app gallery logo.svg" alt="Huawei AppGallery icon" class="w-full h-full object-cover scale-125 group-hover:scale-[1.35] transition-transform" width="48" height="48" loading="lazy">
                             </a>
                             <a href="#" class="group relative w-12 h-12 flex items-center justify-center bg-white border border-on-surface/10 rounded-xl overflow-hidden hover:shadow-premium transition-all shadow-lg" title="Coming soon on Vivo App Store" aria-label="Vivo App Store - Coming Soon">
                                 <img src="vivo-store.png.webp" alt="Vivo App Store icon" class="w-full h-full object-cover group-hover:scale-110 transition-transform" width="48" height="48" loading="lazy">
@@ -460,30 +460,139 @@
             </div>
         </section>
 
-        <!-- Strong CTA Section -->
-        <section class="max-w-7xl mx-auto px-6 py-24" aria-labelledby="cta-heading">
-            <div class="bg-primary rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden shadow-premium group">
-                <div class="absolute inset-0 islamic-pattern opacity-10" aria-hidden="true"></div>
-                <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[120px] -mr-48 -mt-48 group-hover:scale-125 transition-transform duration-1000" aria-hidden="true"></div>
-                <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-[120px] -ml-48 -mb-48" aria-hidden="true"></div>
+        <!-- Testimonials Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20" aria-labelledby="testimonials-heading">
+            <div class="relative rounded-[2.25rem] sm:rounded-[3rem] border border-primary/10 bg-gradient-to-br from-primary/[0.06] via-white to-gold/[0.08] p-5 sm:p-8 md:p-12 overflow-hidden shadow-soft">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl" aria-hidden="true"></div>
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl" aria-hidden="true"></div>
+
+                <div class="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 sm:gap-6 mb-8 sm:mb-10">
+                    <div>
+                        <span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Trusted By Parents</span>
+                        <h2 id="testimonials-heading" class="font-headline text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-3">Real Reviews From Families</h2>
+                        <p class="text-on-surface-variant text-sm sm:text-base md:text-lg max-w-2xl">Authentic feedback from users who are learning Quran, stories, and Islamic basics with Noor Ul Huda.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-white border border-primary/15 text-primary font-bold text-sm">4.9/5 Average Rating</span>
+                    </div>
+                </div>
+
                 <div class="relative z-10">
-                    <h2 id="cta-heading" class="font-headline text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
-                        Start Your Islamic <br/> Learning Journey
-                    </h2>
-                    <p class="text-xl md:text-2xl text-white/80 mb-14 max-w-3xl mx-auto font-medium">Join thousands of families learning Islam through interactive fun. Experience education that stays with you forever.</p>
-                    <div class="flex flex-wrap gap-6 justify-center mb-16">
-                        <a href="https://play.google.com/store/apps/details?id=com.muslimkids.noorulhuda" target="_blank" rel="noopener noreferrer" class="bg-white text-primary px-10 py-6 rounded-2xl font-black text-lg hover:shadow-2xl hover:scale-105 transition-all flex items-center gap-3" aria-label="Download Noor Ul Huda for Android">
-                            <span class="material-symbols-outlined font-bold" aria-hidden="true">download</span> Download for Android
-                        </a>
-                        <button class="bg-transparent border-2 border-white/30 text-white px-10 py-6 rounded-2xl font-black text-lg hover:bg-white/10 transition-all flex items-center gap-3" aria-label="iOS version coming soon" disabled>
-                            <span class="material-symbols-outlined font-bold" aria-hidden="true">download</span> Download for iOS
-                        </button>
+                    <button id="testimonials-prev-btn" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-11 h-11 items-center justify-center rounded-full bg-white border border-primary/15 text-primary shadow-soft hover:bg-primary hover:text-white transition-colors" aria-label="Previous testimonial">
+                        <span class="material-symbols-outlined" aria-hidden="true">chevron_left</span>
+                    </button>
+
+                    <button id="testimonials-next-btn" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-11 h-11 items-center justify-center rounded-full bg-white border border-primary/15 text-primary shadow-soft hover:bg-primary hover:text-white transition-colors" aria-label="Next testimonial">
+                        <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                    </button>
+
+                    <div id="testimonials-slider" data-autoplay-speed="3000" class="overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory" aria-label="User testimonials slider">
+                        <div class="testimonials-track flex gap-0 sm:gap-4 md:gap-6 pb-2">
+                            <article data-testimonial-card class="rounded-[1.5rem] sm:rounded-[1.75rem] border border-primary/10 bg-white p-4 sm:p-5 md:p-6 shadow-soft shrink-0 w-full sm:w-[78%] md:w-[48%] lg:w-[32%] snap-start">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">C</div>
+                                        <div>
+                                            <h3 class="font-headline font-bold text-lg leading-tight">Cricket Jnaoon</h3>
+                                            <p class="text-xs text-on-surface-variant">March 23, 2026</p>
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined text-on-surface-variant/50" aria-hidden="true">more_vert</span>
+                                </div>
+                                <div class="flex items-center gap-1 mb-3" aria-label="5 star review">
+                                    <span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span>
+                                </div>
+                                <p class="text-on-surface-variant leading-relaxed text-sm sm:text-[15px]">Such a helpful app for teaching our kids. It gives them meaningful screen time and replaces mindless scrolling with valuable education.</p>
+                            </article>
+
+                            <article data-testimonial-card class="rounded-[1.5rem] sm:rounded-[1.75rem] border border-primary/10 bg-white p-4 sm:p-5 md:p-6 shadow-soft shrink-0 w-full sm:w-[78%] md:w-[48%] lg:w-[32%] snap-start">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">U</div>
+                                        <div>
+                                            <h3 class="font-headline font-bold text-lg leading-tight">Usairam Sura</h3>
+                                            <p class="text-xs text-on-surface-variant">March 25, 2026</p>
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined text-on-surface-variant/50" aria-hidden="true">more_vert</span>
+                                </div>
+                                <div class="flex items-center gap-1 mb-3" aria-label="5 star review">
+                                    <span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span>
+                                </div>
+                                <p class="text-on-surface-variant leading-relaxed text-sm sm:text-[15px]">Best app technically for kids learning Quran, with great programming and smart design.</p>
+                            </article>
+
+                            <article data-testimonial-card class="rounded-[1.5rem] sm:rounded-[1.75rem] border border-primary/10 bg-white p-4 sm:p-5 md:p-6 shadow-soft shrink-0 w-full sm:w-[78%] md:w-[48%] lg:w-[32%] snap-start">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">P</div>
+                                        <div>
+                                            <h3 class="font-headline font-bold text-lg leading-tight">Parveen Kausar</h3>
+                                            <p class="text-xs text-on-surface-variant">April 2, 2026</p>
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined text-on-surface-variant/50" aria-hidden="true">more_vert</span>
+                                </div>
+                                <div class="flex items-center gap-1 mb-3" aria-label="5 star review">
+                                    <span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span>
+                                </div>
+                                <p class="text-on-surface-variant leading-relaxed text-sm sm:text-[15px]">Noor Ul Huda is a fun and easy Islamic learning app with quizzes, stories, and Quran lessons. Highly recommended for children.</p>
+                            </article>
+
+                            <article data-testimonial-card class="rounded-[1.5rem] sm:rounded-[1.75rem] border border-primary/10 bg-white p-4 sm:p-5 md:p-6 shadow-soft shrink-0 w-full sm:w-[78%] md:w-[48%] lg:w-[32%] snap-start">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">H</div>
+                                        <div>
+                                            <h3 class="font-headline font-bold text-lg leading-tight">Hammad ur Rehman</h3>
+                                            <p class="text-xs text-on-surface-variant">April 1, 2026</p>
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined text-on-surface-variant/50" aria-hidden="true">more_vert</span>
+                                </div>
+                                <div class="flex items-center gap-1 mb-3" aria-label="5 star review">
+                                    <span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span>
+                                </div>
+                                <p class="text-on-surface-variant leading-relaxed text-sm sm:text-[15px]">Mashallah, great app for kids. They can learn Salah, Quran, and also test their knowledge. Recommended for kids and adults.</p>
+                            </article>
+
+                            <article data-testimonial-card class="rounded-[1.5rem] sm:rounded-[1.75rem] border border-primary/10 bg-white p-4 sm:p-5 md:p-6 shadow-soft shrink-0 w-full sm:w-[78%] md:w-[48%] lg:w-[32%] snap-start">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">R</div>
+                                        <div>
+                                            <h3 class="font-headline font-bold text-lg leading-tight">Rana Nadeem</h3>
+                                            <p class="text-xs text-on-surface-variant">April 2, 2026</p>
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined text-on-surface-variant/50" aria-hidden="true">more_vert</span>
+                                </div>
+                                <div class="flex items-center gap-1 mb-3" aria-label="5 star review">
+                                    <span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span>
+                                </div>
+                                <p class="text-on-surface-variant leading-relaxed text-sm sm:text-[15px]">Noor ul Huda is a simple and engaging app for kids to learn Quran and Islamic basics in a fun way. Loved it.</p>
+                            </article>
+
+                            <article data-testimonial-card class="rounded-[1.5rem] sm:rounded-[1.75rem] border border-primary/10 bg-white p-4 sm:p-5 md:p-6 shadow-soft shrink-0 w-full sm:w-[78%] md:w-[48%] lg:w-[32%] snap-start">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">A</div>
+                                        <div>
+                                            <h3 class="font-headline font-bold text-lg leading-tight">Anas Ahmed</h3>
+                                            <p class="text-xs text-on-surface-variant">April 2, 2026</p>
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined text-on-surface-variant/50" aria-hidden="true">more_vert</span>
+                                </div>
+                                <div class="flex items-center gap-1 mb-3" aria-label="5 star review">
+                                    <span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span><span class="material-symbols-outlined text-gold text-sm" aria-hidden="true">star</span>
+                                </div>
+                                <p class="text-on-surface-variant leading-relaxed text-sm sm:text-[15px]">Very helpful application for teaching our kids and students. It gives the right way to use mobile phones with no wasteful use.</p>
+                            </article>
+                        </div>
                     </div>
-                    <div class="flex flex-wrap items-center justify-center gap-10 text-white/60 font-bold uppercase tracking-widest text-xs">
-                        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-gold" aria-hidden="true">check_circle</span> 100% Free</span>
-                        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-gold" aria-hidden="true">check_circle</span> Family Friendly</span>
-                        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-gold" aria-hidden="true">check_circle</span> No Adverts</span>
-                    </div>
+
+                    <div id="testimonials-indicators" class="flex items-center justify-center gap-2 mt-5 sm:mt-6" role="tablist" aria-label="Testimonials slider indicators"></div>
                 </div>
             </div>
         </section>
@@ -528,7 +637,7 @@
     </main>
 
     <!-- Premium Footer -->
-    <footer class="relative bg-[#050810] text-gray-300 mt-16 rounded-t-[2.5rem] lg:rounded-t-[4rem] overflow-hidden border-t border-white/5 shadow-[0_-20px_50px_rgba(0,0,0,0.15)] pt-20 pb-6" role="contentinfo">
+    <footer class="relative bg-[#050810] text-gray-300 mt-12 sm:mt-16 rounded-t-[2rem] sm:rounded-t-[2.5rem] lg:rounded-t-[4rem] overflow-hidden border-t border-white/5 shadow-[0_-20px_50px_rgba(0,0,0,0.15)] pt-14 sm:pt-20 pb-6 sm:pb-8" role="contentinfo">
         
         <!-- Background Glows -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
@@ -537,62 +646,62 @@
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8">
                 
                 <!-- Column 1: Brand Info -->
-                <div class="lg:col-span-4 flex flex-col gap-6">
+                <div class="lg:col-span-4 flex flex-col gap-6 items-center md:items-start text-center md:text-left">
                     <div>
-                        <a href="index.html" class="inline-flex items-center gap-3 text-white group">
+                        <a href="index.html" class="inline-flex items-center justify-center md:justify-start gap-3 text-white group">
                             <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
                                 <img src="Untitled design/9.webp" alt="HudaLabs" class="w-7 h-7 object-contain" width="28" height="28">
                             </div>
                             <span class="text-2xl font-bold tracking-tight font-headline">HudaLabs</span>
                         </a>
-                        <p class="mt-5 text-gray-400 leading-relaxed text-sm pr-4 font-body">
+                        <p class="mt-5 text-gray-400 leading-relaxed text-sm pr-0 md:pr-4 max-w-md font-body">
                             Pioneering digital Islamic education experiences that bridge tradition and technology for the global Muslim community.
                         </p>
                     </div>
 
                     <!-- Contact Emails -->
-                    <div class="flex flex-col gap-3">
-                        <a href="mailto:info@hudalabs.app" class="flex items-center gap-3 group w-max">
+                    <div class="flex flex-col gap-3 items-center md:items-start w-full">
+                        <a href="mailto:info@hudalabs.app" class="flex items-center justify-center md:justify-start gap-3 group w-full sm:w-auto max-w-[19rem]">
                             <div class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 group-hover:bg-primary/20 group-hover:text-primary-light group-hover:border-primary/30 transition-all duration-300">
                                 <i class="fas fa-envelope text-sm"></i>
                             </div>
-                            <span class="text-sm font-medium text-gray-400 group-hover:text-white transition-colors duration-300">info@hudalabs.app</span>
+                            <span class="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white transition-colors duration-300 break-all">info@hudalabs.app</span>
                         </a>
-                        <a href="mailto:huzaifasura970@gmail.com" class="flex items-center gap-3 group w-max">
+                        <a href="mailto:huzaifasura970@gmail.com" class="flex items-center justify-center md:justify-start gap-3 group w-full sm:w-auto max-w-[19rem]">
                             <div class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 group-hover:bg-primary/20 group-hover:text-primary-light group-hover:border-primary/30 transition-all duration-300">
                                 <i class="fas fa-headset text-sm"></i>
                             </div>
-                            <span class="text-sm font-medium text-gray-400 group-hover:text-white transition-colors duration-300">huzaifasura970@gmail.com</span>
+                            <span class="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white transition-colors duration-300 break-all">huzaifasura970@gmail.com</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- Column 2: Navigation Links -->
-                <div class="lg:col-span-2 lg:ml-8">
-                    <h3 class="text-white font-semibold mb-5 tracking-wide text-sm uppercase flex items-center gap-2 font-headline">
+                <div class="lg:col-span-2 xl:ml-8 text-center md:text-left">
+                    <h3 class="text-white font-semibold mb-5 tracking-wide text-sm uppercase flex items-center justify-center md:justify-start gap-2 font-headline">
                         <span class="w-2 h-2 rounded-full bg-primary-light"></span>
                         Navigation
                     </h3>
-                    <ul class="flex flex-col gap-3">
+                    <ul class="flex flex-col gap-3 items-center md:items-start">
                         <li>
-                            <a href="index.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center group w-max">
+                            <a href="index.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center justify-center md:justify-start group w-full sm:w-auto">
                                 <i class="fas fa-chevron-right text-[10px] text-primary-light opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-2"></i>
                                 <span>Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="download.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center group w-max">
+                            <a href="download.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center justify-center md:justify-start group w-full sm:w-auto">
                                 <i class="fas fa-chevron-right text-[10px] text-primary-light opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-2"></i>
                                 <span>Download App</span>
                             </a>
                         </li>
                         <li>
-                            <a href="contact.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center group w-max">
+                            <a href="contact.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center justify-center md:justify-start group w-full sm:w-auto">
                                 <i class="fas fa-chevron-right text-[10px] text-primary-light opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-2"></i>
                                 <span>Contact Us</span>
                             </a>
@@ -601,26 +710,26 @@
                 </div>
 
                 <!-- Column 3: Legal -->
-                <div class="lg:col-span-2">
-                    <h3 class="text-white font-semibold mb-5 tracking-wide text-sm uppercase flex items-center gap-2 font-headline">
+                <div class="lg:col-span-2 text-center md:text-left">
+                    <h3 class="text-white font-semibold mb-5 tracking-wide text-sm uppercase flex items-center justify-center md:justify-start gap-2 font-headline">
                         <span class="w-2 h-2 rounded-full bg-gold"></span>
                         Legal
                     </h3>
-                    <ul class="flex flex-col gap-3">
+                    <ul class="flex flex-col gap-3 items-center md:items-start">
                         <li>
-                            <a href="privacy.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center group w-max">
+                            <a href="privacy.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center justify-center md:justify-start group w-full sm:w-auto">
                                 <i class="fas fa-chevron-right text-[10px] text-gold opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-2"></i>
                                 <span>Privacy Policy</span>
                             </a>
                         </li>
                         <li>
-                            <a href="terms.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center group w-max">
+                            <a href="terms.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center justify-center md:justify-start group w-full sm:w-auto">
                                 <i class="fas fa-chevron-right text-[10px] text-gold opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-2"></i>
                                 <span>Terms & Conditions</span>
                             </a>
                         </li>
                         <li>
-                            <a href="contact.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center group w-max">
+                            <a href="contact.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center justify-center md:justify-start group w-full sm:w-auto">
                                 <i class="fas fa-chevron-right text-[10px] text-gold opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-2"></i>
                                 <span>Support</span>
                             </a>
@@ -629,14 +738,14 @@
                 </div>
 
                 <!-- Column 4: Download & Social -->
-                <div class="lg:col-span-4 bg-white/[0.02] border border-white/5 rounded-2xl p-5 backdrop-blur-sm relative overflow-hidden group hover:border-primary/30 transition-colors duration-500">
+                <div class="lg:col-span-4 bg-white/[0.02] border border-white/5 rounded-2xl p-4 sm:p-5 backdrop-blur-sm relative overflow-hidden group hover:border-primary/30 transition-colors duration-500 text-center md:text-left">
                     <div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors duration-500" aria-hidden="true"></div>
                     
                     <h3 class="text-white font-semibold mb-2 text-base font-headline">Download Our App</h3>
                     <p class="text-gray-400 text-sm mb-4">Get Noor Ul Huda - Free Islamic learning for the whole family.</p>
                     
                     <!-- Download Button -->
-                    <a href="https://play.google.com/store/apps/details?id=com.muslimkids.noorulhuda" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:scale-105 shadow-lg shadow-primary/20">
+                    <a href="https://play.google.com/store/apps/details?id=com.muslimkids.noorulhuda" target="_blank" rel="noopener noreferrer" class="inline-flex w-full sm:w-auto items-center justify-center md:justify-start gap-2 bg-primary hover:bg-primary-light text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:scale-105 shadow-lg shadow-primary/20">
                         <i class="fab fa-google-play"></i>
                         <span>Get on Google Play</span>
                     </a>
@@ -644,7 +753,7 @@
                     <!-- Social Icons -->
                     <div class="mt-5">
                         <p class="text-xs text-gray-500 mb-3 uppercase tracking-wider font-semibold">Connect With Us</p>
-                        <div class="flex gap-2">
+                        <div class="flex gap-2 justify-center md:justify-start flex-wrap">
                             <a href="https://www.instagram.com/noorulhudaapp/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-tr hover:from-purple-600 hover:to-pink-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(236,72,153,0.4)]" aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
@@ -664,11 +773,11 @@
             </div>
 
             <!-- Divider -->
-            <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-8"></div>
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-6 sm:my-8"></div>
 
             <!-- Bottom Copyright -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+                <p class="text-gray-500 text-xs sm:text-sm text-center md:text-left">
                     © 2026 Noor Ul Huda Kids - Islamic Learning App. All rights reserved.
                 </p>
                 

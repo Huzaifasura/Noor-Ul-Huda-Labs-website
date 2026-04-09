@@ -287,6 +287,164 @@ if (document.readyState === 'loading') {
 }
 
 // ============================================
+// Testimonials Slider
+// ============================================
+function initTestimonialsSlider() {
+    const slider = document.getElementById('testimonials-slider');
+    const prevBtn = document.getElementById('testimonials-prev-btn');
+    const nextBtn = document.getElementById('testimonials-next-btn');
+    const indicatorsRoot = document.getElementById('testimonials-indicators');
+
+    if (!slider || !prevBtn || !nextBtn || !indicatorsRoot) return;
+
+    const cards = Array.from(slider.querySelectorAll('[data-testimonial-card]'));
+    if (!cards.length) return;
+
+    let autoplayTimer = null;
+    const speedFromHtml = Number.parseInt(slider.dataset.autoplaySpeed || '', 10);
+    const autoplayDelay = Number.isFinite(speedFromHtml) && speedFromHtml >= 1500 ? speedFromHtml : 3000;
+    let indicatorButtons = [];
+    let cardPositions = [];
+
+    const buildCardPositions = () => {
+        cardPositions = cards.map((card) => Math.round(card.offsetLeft));
+    };
+
+    const getCurrentIndex = () => {
+        if (!cardPositions.length) return 0;
+
+        let closestIdx = 0;
+        let closestDistance = Math.abs(slider.scrollLeft - cardPositions[0]);
+
+        for (let idx = 1; idx < cardPositions.length; idx += 1) {
+            const distance = Math.abs(slider.scrollLeft - cardPositions[idx]);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIdx = idx;
+            }
+        }
+
+        return closestIdx;
+    };
+
+    const goToIndex = (index, smooth = true) => {
+        if (!cardPositions.length) buildCardPositions();
+        if (!cardPositions.length) return;
+
+        const target = Math.max(0, Math.min(cards.length - 1, index));
+        slider.scrollTo({
+            left: cardPositions[target],
+            behavior: smooth ? 'smooth' : 'auto'
+        });
+    };
+
+    const updateIndicators = () => {
+        const active = getCurrentIndex();
+        indicatorButtons.forEach((btn, idx) => {
+            if (idx === active) {
+                btn.setAttribute('aria-selected', 'true');
+            } else {
+                btn.setAttribute('aria-selected', 'false');
+            }
+        });
+    };
+
+    const nextSlide = () => {
+        const active = getCurrentIndex();
+        const next = active >= cards.length - 1 ? 0 : active + 1;
+        goToIndex(next);
+    };
+
+    const prevSlide = () => {
+        const active = getCurrentIndex();
+        const prev = active <= 0 ? cards.length - 1 : active - 1;
+        goToIndex(prev);
+    };
+
+    const stopAutoplay = () => {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    };
+
+    const startAutoplay = () => {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, autoplayDelay);
+    };
+
+    // Build indicators
+    indicatorsRoot.innerHTML = '';
+    indicatorButtons = cards.map((_, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'testimonial-indicator';
+        btn.setAttribute('aria-label', `Go to testimonial ${idx + 1}`);
+        btn.setAttribute('role', 'tab');
+        btn.addEventListener('click', () => {
+            goToIndex(idx);
+            stopAutoplay();
+            startAutoplay();
+        });
+        indicatorsRoot.appendChild(btn);
+        return btn;
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoplay();
+        startAutoplay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoplay();
+        startAutoplay();
+    });
+
+    let scrollRaf = null;
+    slider.addEventListener('scroll', () => {
+        if (scrollRaf) cancelAnimationFrame(scrollRaf);
+        scrollRaf = requestAnimationFrame(updateIndicators);
+    }, { passive: true });
+
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
+    slider.addEventListener('touchstart', stopAutoplay, { passive: true });
+    slider.addEventListener('touchend', startAutoplay);
+    prevBtn.addEventListener('focus', stopAutoplay);
+    nextBtn.addEventListener('focus', stopAutoplay);
+    prevBtn.addEventListener('blur', startAutoplay);
+    nextBtn.addEventListener('blur', startAutoplay);
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoplay();
+        } else {
+            startAutoplay();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        const active = getCurrentIndex();
+        buildCardPositions();
+        goToIndex(active, false);
+        updateIndicators();
+    });
+
+    buildCardPositions();
+    goToIndex(0, false);
+    updateIndicators();
+    startAutoplay();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTestimonialsSlider);
+} else {
+    initTestimonialsSlider();
+}
+
+// ============================================
 // Custom SVG Cursor - Lightweight Implementation
 // ============================================
 (function() {
